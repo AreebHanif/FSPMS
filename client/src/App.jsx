@@ -10,6 +10,7 @@ import AdminRoute from "./pages/admin/AdminRoute";
 import UserRoute from "./pages/User/UserRoute";
 import Footer from "./pages/Footer";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 // Lazy loaded pages for code splitting
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -29,14 +30,15 @@ function App() {
       <ToastContainer />
       <BrowserRouter>
         <Navigation />
-        <Suspense fallback={<div style={{textAlign: 'center', marginTop: '2rem'}}>Loading...</div>}>
+        <Suspense fallback={<div style={{ textAlign: 'center', marginTop: '2rem' }}>Loading...</div>}>
           <Routes>
             {/* Routes for EveryOne */}
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/dashboard" element={<MainDashboard />} />
-            <Route path="/contact" element={<Contact />}/>
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
 
             {/* User Dashboard Routes */}
             <Route path="/user" element={<UserRoute />}>
