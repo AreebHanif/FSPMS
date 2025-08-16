@@ -38,6 +38,7 @@ function App() {
             <Route path="/profile" element={<Profile />} />
             <Route path="/dashboard" element={<MainDashboard />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<SignupPage />} />
             <Route path="*" element={<NotFound />} />
 
             {/* User Dashboard Routes */}
@@ -53,7 +54,6 @@ function App() {
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminRoute />}>
               <Route path="dashboard" element={<Dashboard />} />
-              <Route path="signup" element={<SignupPage />} />
               <Route path="usersList" element={<UserList />} />
               <Route path="teamList" element={<TeamList />} />
               <Route path="projectsList" element={<ProjectList />} />
