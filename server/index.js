@@ -44,7 +44,7 @@ app.use('/api/tasks', taskRoutes)
 app.use('/api/dashboard', adminRoutes)
 
 app.get('/', (req, res) => {
-    res.send("<h1>Backend is running successfully.</h1>")
+    res.send("<h1>Backend is running successfully with mongoDB.</h1>")
 })
 
 connectDB()
