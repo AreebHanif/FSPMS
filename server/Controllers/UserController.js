@@ -5,7 +5,6 @@ import { userRegister } from "../utils/Notification.js"
 
 const createUser = async (req, res) => {
     let { name, email, password, designation, image } = req.body;
-    console.log(req.body)
     if (!name || !email || !password) {
         return res.status(400).json({ message: 'Name, email, and password are required.' });
     }
@@ -30,7 +29,7 @@ const createUser = async (req, res) => {
             user: savedUserObj
         });
     } catch (error) {
-        return res.status(500).json({ message: 'Internal Server error. U-0', error });
+        return res.status(500).json({ message: 'Internal Server error. U-0 ' });
     }
 }
 
