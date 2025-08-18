@@ -44,7 +44,8 @@ const loginUser = async (req, res) => {
         if (userExist) {
             const ispasswordMatch = await bcrypt.compare(password, userExist.password)
             if (ispasswordMatch) {
-                createToken(res, userExist._id)
+                let token = createToken(res, userExist._id)
+                console.log("Token in loginUser:", token);
                 return res.status(200).json({
                     _id: userExist._id,
                     name: userExist.name,

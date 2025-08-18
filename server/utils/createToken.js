@@ -4,12 +4,14 @@ const createToken = (res, userId) => {
     const token = jwt.sign({ userId }, process.env.SECRET_KEY, {
         expiresIn: '30d'
     })
+    console.log("Token in function ", token)
     res.cookie("PMS", token, {
         httpOnly: true,
+        secure: process.env.NODE_ENV === "production",  // important for HTTPS
+        sameSite: "None",  // required if frontend and backend are on different domains
         maxAge: 30 * 24 * 60 * 60 * 1000,
-        secure: process.env.NODE_ENV === 'production' ? true : false,
-        sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
     })
+
     return token
 }
 
