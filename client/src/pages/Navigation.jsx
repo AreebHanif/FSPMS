@@ -76,7 +76,7 @@ const Navigation = () => {
               <LayoutDashboard className="w-5 h-5 text-white" />
             </div>
             <h1 className="text-xl font-semibold text-gray-900">
-              <Link to="/">Project Management System</Link>
+              <Link to="/">PMS</Link>
             </h1>
           </div>
           <div className="flex items-center space-x-4">
