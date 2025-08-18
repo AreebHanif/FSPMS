@@ -7,7 +7,7 @@ const createToken = (res, userId) => {
     console.log("Token in function ", token)
     res.cookie("PMS", token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",  // important for HTTPS
+        secure: true,  // important for HTTPS
         sameSite: "None",  // required if frontend and backend are on different domains
         maxAge: 30 * 24 * 60 * 60 * 1000,
     })
